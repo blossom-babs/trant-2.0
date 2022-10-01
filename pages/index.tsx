@@ -1,9 +1,11 @@
 import axios from 'axios';
 import type { NextPage, GetStaticProps } from 'next';
 import Head from 'next/head';
+import { TechPosts } from '../components';
+import LatestPost from '../components/LatestPost';
 import { GetPostResults, Post } from '../types';
 
-const Home: NextPage<{posts: Post[]}> = ({ posts }) => {
+const Home: NextPage<{ posts: Post[] }> = ({ posts }) => {
 	console.log(Array.isArray(posts));
 	//console.log(posts.data[0].attributes.title)
 	const meta = {
@@ -24,7 +26,7 @@ const Home: NextPage<{posts: Post[]}> = ({ posts }) => {
 				<meta name="og:site_name" content="A developer's journey" />
 			</Head>
 
-			<h1>Latest post</h1>
+			<LatestPost posts={posts} />
 			<div>
 				{posts.map((item: any) => (
 					<div key={item.id}>
@@ -32,7 +34,7 @@ const Home: NextPage<{posts: Post[]}> = ({ posts }) => {
 					</div>
 				))}
 			</div>
-			{/* <h1>{posts.data[0]}</h1> */}
+			<TechPosts posts={posts} />
 		</>
 	);
 };
