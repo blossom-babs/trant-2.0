@@ -1,13 +1,10 @@
 import axios from 'axios';
 import type { NextPage, GetStaticProps } from 'next';
 import Head from 'next/head';
+import { GetPostResults, Post } from '../types';
 
-type Blog = {
-	post: {};
-};
-
-const Home: NextPage = ({ posts }:any) => {
-	console.log(posts)
+const Home: NextPage<{posts: Post[]}> = ({ posts }) => {
+	console.log(Array.isArray(posts));
 	//console.log(posts.data[0].attributes.title)
 	const meta = {
 		title: 'Trant',
@@ -29,11 +26,11 @@ const Home: NextPage = ({ posts }:any) => {
 
 			<h1>Latest post</h1>
 			<div>
-			{posts.map((item: any) => (
-				<div key={item.id}>
-					<h1>{item.attributes.title}</h1>
-				</div>
-			))}
+				{posts.map((item: any) => (
+					<div key={item.id}>
+						<h1>{item.attributes.title}</h1>
+					</div>
+				))}
 			</div>
 			{/* <h1>{posts.data[0]}</h1> */}
 		</>
@@ -41,10 +38,12 @@ const Home: NextPage = ({ posts }:any) => {
 };
 
 export const getStaticProps: GetStaticProps = async (context) => {
-	const res = await axios.get('http://localhost:1337/api/posts')
+	const res = await axios.get('http://localhost:1337/api/posts');
+	const result: GetPostResults = res.data.data;
+
 	return {
 		props: {
-			posts: res.data.data
+			posts: result
 		}
 	};
 };
