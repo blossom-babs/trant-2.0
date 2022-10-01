@@ -1,9 +1,14 @@
-import type { NextPage } from 'next';
+import axios from 'axios';
+import type { NextPage, GetStaticProps } from 'next';
 import Head from 'next/head';
-import Image from 'next/image';
-import styles from '../styles/Home.module.css';
 
-const Home: NextPage = () => {
+type Blog = {
+	post: {};
+};
+
+const Home: NextPage = ({ posts }:any) => {
+	console.log(posts)
+	//console.log(posts.data[0].attributes.title)
 	const meta = {
 		title: 'Trant',
 		description:
@@ -22,9 +27,26 @@ const Home: NextPage = () => {
 				<meta name="og:site_name" content="A developer's journey" />
 			</Head>
 
-			<h1>New page</h1>
+			<h1>Latest post</h1>
+			<div>
+			{posts.map((item: any) => (
+				<div key={item.id}>
+					<h1>{item.attributes.title}</h1>
+				</div>
+			))}
+			</div>
+			{/* <h1>{posts.data[0]}</h1> */}
 		</>
 	);
+};
+
+export const getStaticProps: GetStaticProps = async (context) => {
+	const res = await axios.get('http://localhost:1337/api/posts')
+	return {
+		props: {
+			posts: res.data.data
+		}
+	};
 };
 
 export default Home;
