@@ -1,7 +1,6 @@
-import '../styles/globals.css'
+import '../styles/index.scss'
 import type { AppProps } from 'next/app'
-import Header from '../components/Header'
-import Footer from '../components/Footer'
+import {Header, Footer} from '../components/'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return <>

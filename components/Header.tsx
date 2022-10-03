@@ -6,7 +6,7 @@ import { Links } from './index';
 
 const Header = () => {
 	return (
-		<div>
+		<div className='header'>
 			<Link href={'/'}>
 				<a>
 					<img src="./transparent-logo.png" />
