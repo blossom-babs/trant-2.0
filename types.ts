@@ -45,3 +45,8 @@ export interface photoAttributes {
   createdAt:         Date;
   updatedAt:         Date;
 }
+
+export interface LinkTypes{
+  path: string,
+  routeName: string
+}
