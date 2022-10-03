@@ -7,9 +7,11 @@ import { Links } from './index';
 const Header = () => {
 	return (
 		<div>
-      <Link href={'/'}>
-      <h1>Trant</h1>
-      </Link>
+			<Link href={'/'}>
+				<a>
+					<img src="./transparent-logo.png" />
+				</a>
+			</Link>
 			<div>
 				<FontAwesomeIcon icon={faMagnifyingGlass} />
 				<input placeholder="search" />
