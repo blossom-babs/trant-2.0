@@ -3,7 +3,7 @@ import Link from 'next/link';
 import React from 'react';
 import { LinkTypes } from '../types';
 
-const Links: NextPage<{ props: LinkTypes }> = ({ props }) => {
+const Links: NextPage<LinkTypes> = (props) => {
 	return (
 		<Link href={props.path}>
 			<a>{props.routeName}</a>

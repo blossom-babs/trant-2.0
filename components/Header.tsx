@@ -1,24 +1,26 @@
-import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import Link from 'next/link'
-import React from 'react'
+import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Link from 'next/link';
+import React from 'react';
+import { Links } from './index';
 
 const Header = () => {
-  return (
-    <div>
+	return (
+		<div>
+      <Link href={'/'}>
       <h1>Trant</h1>
-      <div>
-      <FontAwesomeIcon icon={faMagnifyingGlass} />
-        <input placeholder='search'/>
-      </div>
-      <ul>
-        <Link href={'/blog'}>
-        <a>Blog</a>
-        </Link>
-        
-      </ul>
-    </div>
-  )
-}
+      </Link>
+			<div>
+				<FontAwesomeIcon icon={faMagnifyingGlass} />
+				<input placeholder="search" />
+			</div>
+			<ul>
+				<Links path={'/blog'} routeName="Blog" />
+				<Links path={'/projects'} routeName="Projects" />
+				<Links path={'/about'} routeName="about" />
+			</ul>
+		</div>
+	);
+};
 
-export default Header
+export default Header;
