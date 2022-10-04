@@ -1,0 +1,52 @@
+@use '../global/reset.scss' as *;
+
+.header{
+  background: #000;
+
+  &_inner{
+    @include flexCentre;
+    @include fluidLayout;
+    justify-content: space-between;
+    padding: 1rem 0;
+  }
+
+  &_links{
+    @include flexCentre;
+    gap: 1rem;
+
+    li{
+      width: max-content;
+
+      a{
+        color: #ddd;
+      }
+    }
+
+  }
+
+  &_logo{
+    width: 100px;
+  }
+
+  &_search{
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    width: 50%;
+
+    input{
+      background: transparent;
+      border: transparent;
+      padding: .6rem 0;
+
+      &:hover, &:focus{
+        border: transparent;
+        outline: transparent;
+      }
+    }
+
+    svg{
+      width: 50px;
+    }
+  }
+}

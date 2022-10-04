@@ -6,5 +6,20 @@ body, * {
   width: 100%;
   font-size: 16px;
   font-family: 'Nunito', sans-serif;
+}
 
+ul{
+  list-style-type: none;
+
+  li{
+    color: inherit;
+  }
+}
+
+a{
+  text-decoration: none;
+
+  &:hover{
+    text-decoration: underline;
+  }
 }
