@@ -1,7 +1,7 @@
 @use '../global/reset.scss' as *;
 
 .footer{
-  position: static;
+  position: fixed;
   bottom: 0;
 
   &_copyright{
