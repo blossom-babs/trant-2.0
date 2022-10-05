@@ -1,0 +1,57 @@
+.about {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  &-me {
+    padding-top: 3rem;
+
+    img {
+      width: 20%;
+    }
+
+    p {
+      padding-top: 1rem;
+    }
+  }
+
+  &-trant {
+    border-bottom: 1px solid #888;
+  }
+
+  &-trant,
+  &-me {
+    padding-bottom: 3rem;
+
+    em, a {
+      color: red;
+      text-decoration: none;
+      padding-right: .1rem;
+    }
+
+    h1 {
+      font-size: 2rem;
+      padding-bottom: 1rem;
+    }
+
+    p {
+      width: 70%;
+      margin: 0 auto;
+      line-height: 1.8;
+    }
+  }
+
+  &-icons {
+    padding-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    width: 30%;
+    margin: 0 auto;
+
+    a {
+      color: rgb(163, 75, 75);
+    }
+  }
+}
