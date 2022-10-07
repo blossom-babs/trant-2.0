@@ -4,6 +4,11 @@
   align-items: center;
   text-align: center;
 
+  @media screen and (min-width:768px) {
+    width: 700px;
+    margin: 0 auto;
+  }
+  
   &-me {
     padding-top: 3rem;
 

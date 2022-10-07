@@ -43,7 +43,14 @@ const About = () => {
 				<div className="about-me">
 					<h1>The Author</h1>
 					<div>
-						<img src="./me.png" alt="Blossom" />
+          <Image
+							src="/me.png"
+							alt="Blosso,"
+							width="150px"
+							height="150px"
+							layout="fixed"
+							// objectFit="contain"
+						/>
 						<p>
 							Hi, my name is Blossom. I am a software developer based out of
 							Ibadan, Nigeria. I write python, full stack Javascript and
