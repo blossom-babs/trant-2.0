@@ -29,15 +29,15 @@ const Home: NextPage<{ posts: Post[] }> = ({ posts }) => {
 	);
 };
 
-export const getStaticProps: GetStaticProps = async (context) => {
-	const res = await axios.get('http://localhost:1337/api/posts?populate=*');
-	const result: GetPostResults = res.data.data;
+// export const getStaticProps: GetStaticProps = async (context) => {
+// 	const res = await axios.get('http://localhost:1337/api/posts?populate=*');
+// 	const result: GetPostResults = res.data.data;
 
-	return {
-		props: {
-			posts: result
-		}
-	};
-};
+// 	return {
+// 		props: {
+// 			posts: result
+// 		}
+// 	};
+// };
 
 export default Home;
