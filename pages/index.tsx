@@ -1,7 +1,6 @@
 import axios from 'axios';
 import type { NextPage, GetStaticProps } from 'next';
 import Head from 'next/head';
-import { TechPosts } from '../components';
 import LatestPost from '../components/LatestPost';
 import { GetPostResults, Post } from '../types';
 
@@ -24,7 +23,8 @@ const Home: NextPage<{ posts: Post[] }> = ({ posts }) => {
 				<meta name="og:site_name" content="A developer's journey" />
 			</Head>
 
-			<LatestPost posts={posts} />
+			<h1>Home page</h1>
+			{/* <LatestPost posts={posts} /> */}
 		</>
 	);
 };
