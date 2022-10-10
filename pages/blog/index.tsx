@@ -1,22 +1,22 @@
 import axios from 'axios';
 import { GetStaticProps, NextPage } from 'next';
 import React from 'react';
-import { PostSnippet } from '../components';
-import { GetPostResults, Post } from '../types';
+import { PostSnippet } from '../../components';
+import { GetPostResults, Post } from '../../types';
 
 const blog: NextPage<{ posts: Post[] }> = ({ posts }) => {
 	return (
 		// filters
-		<div className='blog'>
-			<div className='blog_all'>
-			{posts.map(({ id, attributes }) => (
-				<PostSnippet
-					key={id}
-					path={String(id)}
-					title={attributes.title}
-					img={attributes.cover_photo.data.attributes.url}
-				/>
-			))}
+		<div className="blog">
+			<div className="blog_all">
+				{posts.map(({ id, attributes }) => (
+					<PostSnippet
+						key={id}
+						path={`/blog/${id}`}
+						title={attributes.title}
+						img={attributes.cover_photo.data.attributes.url}
+					/>
+				))}
 			</div>
 		</div>
 	);
