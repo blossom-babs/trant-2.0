@@ -6,7 +6,7 @@ import { PostSnippetType } from '../types';
 
 const PostSnippet: NextPage<PostSnippetType> = (props) => {
 	return (
-		<div className='postSnippet'>
+		<div className='snippet'>
 			<Link href={props.path}>
 				<div>
 					<Image width='100' height='100' layout='fixed' src={props.img} />

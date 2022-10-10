@@ -6,7 +6,9 @@ import { GetPostResults, Post } from '../types';
 
 const blog: NextPage<{ posts: Post[] }> = ({ posts }) => {
 	return (
+		// filters
 		<div className='blog'>
+			<div className='blog_all'>
 			{posts.map(({ id, attributes }) => (
 				<PostSnippet
 					key={id}
@@ -15,6 +17,7 @@ const blog: NextPage<{ posts: Post[] }> = ({ posts }) => {
 					img={attributes.cover_photo.data.attributes.url}
 				/>
 			))}
+			</div>
 		</div>
 	);
 };
