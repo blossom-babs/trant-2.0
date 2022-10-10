@@ -4,6 +4,7 @@ import Head from 'next/head';
 import LatestPost from '../components/LatestPost';
 import { GetPostResults, Post } from '../types';
 
+
 const Home: NextPage<{ posts: Post[] }> = ({ posts }) => {
 	const meta = {
 		title: 'Trant',
@@ -23,8 +24,7 @@ const Home: NextPage<{ posts: Post[] }> = ({ posts }) => {
 				<meta name="og:site_name" content="A developer's journey" />
 			</Head>
 
-			<h1>Home page</h1>
-			{/* <LatestPost posts={posts} /> */}
+			<LatestPost posts={posts} />
 		</>
 	);
 };
