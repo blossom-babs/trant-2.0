@@ -9,8 +9,8 @@ const PostSnippet: NextPage<PostSnippetType> = (props) => {
 		<div className='snippet'>
 			<Link href={props.path}>
 				<div>
-					<Image width='100' height='100' layout='fixed' src={props.img} />
-					<h1>{props.title}</h1>
+					<Image width={250} height={200} layout='fixed' src={props.img} />
+					<h1 className='snippet_title'>{props.title}</h1>
 				</div>
 			</Link>
 		</div>
