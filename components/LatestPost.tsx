@@ -8,17 +8,8 @@ const api_url = 'http://localhost:1337';
 
 const LatestPost: NextPage<{ posts: Post[] }> = ({ posts }) => {
 	const latest = posts[posts.length - 1];
-	const {title, description, cover_photo, categories} = latest.attributes
-	console.log(categories.data)
-	let cat = categories.data
-	for (let item of cat){
-		console.log(item)
-		if (item.attributes.name === 'tech'){
-			console.log('thank you Jesus')
-		} else{
-			console.log('thank you, next')
-		}
-	}
+	const { title, description, cover_photo, categories } = latest.attributes;
+
 	return (
 		<article className="latestPost">
 			<div>

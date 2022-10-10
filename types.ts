@@ -51,6 +51,12 @@ export interface LinkTypes {
   routeName: string
 }
 
+export interface PostSnippetType{
+  path: any,
+  title: any,
+  img: any,
+}
+
 export interface Category {
   data: Categories[];
 }
