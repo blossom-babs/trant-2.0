@@ -22,13 +22,6 @@ const blog: NextPage<{ posts: Post[] }> = ({ posts }) => {
 	);
 };
 
-// <Link key={id} href={String(id)}>
-//   <div>
-// 	<Image width={100} height={100} layout='fixed' src={attributes.cover_photo.data.attributes.url} />
-// 	<h1>{attributes.title}</h1>
-// </div>
-// </Link>
-
 export const getStaticProps: GetStaticProps = async (context) => {
 	const res = await axios.get('http://localhost:1337/api/posts?populate=*');
 	const result: GetPostResults = res.data.data;
