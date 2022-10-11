@@ -2,13 +2,19 @@ import axios from 'axios';
 import { NextPage } from 'next';
 import React from 'react';
 import { GetPostResults, Post } from '../../types';
+import MarkdownIt from 'markdown-it';
+import Image from 'next/image';
 
 const BlogPost: NextPage<{ post: Post }> = ({ post }) => {
+	const {title, content, cover_photo} = post.attributes
+	const md = new MarkdownIt()
+	const htmlContent = md.render(content)
 	return (
-		<article>
+		<article className='blog_page'>
 			<header>
- 				<h1>{post.attributes.title}</h1>
-				<h2>{post.attributes.content}</h2>
+ 				<h1>{title}</h1>
+				<Image src={cover_photo.data.attributes.url} width={100} height={100} layout='fixed'/>
+				<p dangerouslySetInnerHTML={{__html: htmlContent}}></p>
 			</header>
 		</article>
 	);
