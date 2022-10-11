@@ -8,8 +8,7 @@ const api_url = 'http://localhost:1337';
 
 const LatestPost: NextPage<{ posts: Post[] }> = ({ posts }) => {
 	const latest = posts[posts.length - 1];
-	const { title, description, cover_photo, categories } = latest.attributes;
-
+	const { title, description, cover_photo } = latest.attributes;
 	return (
 		<article className="latestPost">
 			<div>
@@ -24,7 +23,7 @@ const LatestPost: NextPage<{ posts: Post[] }> = ({ posts }) => {
 				<h1>{title}</h1>
 				<p>{description}</p>
 				<button>
-					<Link href={'/'}>read more</Link>
+					<Link href={`/blog/${latest.id.toString()}`}>read more</Link>
 				</button>
 			</div>
 		</article>
