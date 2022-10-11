@@ -11,11 +11,9 @@ const BlogPost: NextPage<{ post: Post }> = ({ post }) => {
 	const htmlContent = md.render(content)
 	return (
 		<article className='blog_page'>
-			<header>
- 				<h1>{title}</h1>
-				<Image src={cover_photo.data.attributes.url} width={100} height={100} layout='fixed'/>
-				<p dangerouslySetInnerHTML={{__html: htmlContent}}></p>
-			</header>
+				<Image src={cover_photo.data.attributes.url} width={100} height={100} layout='responsive'/>
+ 				<h1 className='blog_page-title'>{title}</h1>
+				<section className='blog_page-content' dangerouslySetInnerHTML={{__html: htmlContent}}></section>
 		</article>
 	);
 };
